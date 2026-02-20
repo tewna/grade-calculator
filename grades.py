@@ -16,13 +16,16 @@ def class_average(scores):
     """Return the average of a list of scores."""
     total = 0
     for score in scores:
-        total = score          # <-- BUG! Should be +=
+        total += score          # <-- BUG! Should be +=
     return total / len(scores)
 
 def highest_score(scores):
     """Return the highest score in the list."""
-    best = 0                   # <-- BUG! Should be scores[0]
+    best = scores[0]                   # <-- BUG! Should be scores[0]
     for score in scores:
         if score > best:
             best = score
     return best
+
+highest_score([70, 85, 90, 60])  #just put these here so the debugger checks inside
+class_average([100, 80, 60])
